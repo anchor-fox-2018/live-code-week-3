@@ -8,7 +8,7 @@ class Diary {
 
 class Day extends Diary {
     static dayInput() {
-        
+
     }
 }
 
@@ -19,53 +19,79 @@ class DiaryFactory extends Diary {
         // console.log('masuuk');
     }
 
-    static create(month) {
+    create(month) {
 
-        let temp =  new Diary();
-
-        temp.month = month
+        this.month = month
 
         switch(month) {
             case 'january':
-                temp.day = 31;
+                this.day = 31;
                 break;
             case 'february':
                 this.day = 29;
             case 'march':
-                temp.day = 31;
+                this.day = 31;
                 break;
             case 'april':
-                temp.day = 30;
+                this.day = 30;
                 break;
             case 'may':
-                temp.day = 31;
+                this.day = 31;
                 break;
             case 'june':
-                temp.day = 30;
+                this.day = 30;
                 break;
             case 'july':
-                temp.day = 31;
+                this.day = 31;
                 break;
             case 'august':
-                temp.day = 31;
+                this.day = 31;
                 break;
             case 'september':
-                temp.day = 30;
+                this.day = 30;
                 break;
             case 'october':
-                temp.day = 31;
+                this.day = 31;
                 break;
             case 'november':
-                temp.day = 30;
+                this.day = 30;
                 break;
             case 'december':
-                temp.day = 31;
+                this.day = 31;
                 break;
         }
 
-        return temp;
+        return this;
+    }
+
+    write(date, note) {
+        if(date <= this.day) {
+            let dayNote = {
+                day: Number(date),
+                note: note
+            }
+            this.diaries.push(dayNote);
+            console.log(`Berhasil menulis diary: ${note}`)
+        }
+
+        else {
+            console.log(`Data yang dimasukkan tidak ada pada bulan ${this.month}`);
+        }
+
+        return this;
     }
 }
 
-let septemberDiary = DiaryFactory.create('september');
+let septemberDiary = new DiaryFactory();
+septemberDiary.create('september');
+
+console.log('HASIL NEW!')
+console.log(septemberDiary);
+console.log(septemberDiary.day);
+console.log(septemberDiary.month);
+console.log(septemberDiary.diaries);
+console.log('\n')
+
+console.log('HASIL WRITE!')
+septemberDiary.write(20, 'ngerjain live coding');
 console.log(septemberDiary);

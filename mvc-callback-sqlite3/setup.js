@@ -10,12 +10,10 @@ function create_and_seed() {
     db.run(`CREATE TABLE IF NOT EXISTS Singers
       (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(100),
       origin VARCHAR(100), label VARCHAR(100), year_of_debut INTEGER, song_id INTEGER, FOREIGN KEY(song_id) REFERENCES Songs(id))`);
-
     db.run(`INSERT INTO Songs VALUES(null, 'Feeling Good', 1965, 'Easy Listening, Pop')`)
     db.run(`INSERT INTO Songs VALUES(null, 'More than Words', '1990', 'Pop' )`)
     db.run(`INSERT INTO Songs VALUES(null, 'The Edge Of Heaven', '1986', 'Pop' )`)
     db.run(`INSERT INTO Songs VALUES(null, 'Smooth Criminal', '1987', 'Rock' )`)
-
     db.run(`INSERT INTO Singers VALUES(null, 'Nina Simone', 'California', 'Legacy Recordings', '1993', 1)`)
     db.run(`INSERT INTO Singers VALUES(null, 'Muse', 'England', 'Maverick', '1994', 1)`)
     db.run(`INSERT INTO Singers VALUES(null, 'Michael Bubble', 'Canada', 'Reprise', '1996', 1)`)
@@ -29,4 +27,4 @@ function create_and_seed() {
   })
 }
 
-create_and_seed()
+create_and_seed();

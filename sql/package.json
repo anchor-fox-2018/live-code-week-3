@@ -1,0 +1,14 @@
+{
+  "name": "sql",
+  "version": "1.0.0",
+  "description": "## Soal 1 Tampilkan Id , Name , age dari masing - masing `Customer` berdasarkan birthdate nya",
+  "main": "query.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sqlite3": "^4.0.2"
+  }
+}

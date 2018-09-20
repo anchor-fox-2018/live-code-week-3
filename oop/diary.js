@@ -64,6 +64,7 @@ class DiaryFactory extends Diary {
         return this;
     }
 
+    // WRITE
     write(date, note) {
         if(date <= this.day) {
             let dayNote = {
@@ -80,6 +81,9 @@ class DiaryFactory extends Diary {
 
         return this;
     }
+
+    // REPORT
+    
 }
 
 let septemberDiary = new DiaryFactory();
@@ -90,8 +94,11 @@ console.log(septemberDiary);
 console.log(septemberDiary.day);
 console.log(septemberDiary.month);
 console.log(septemberDiary.diaries);
-console.log('\n')
+console.log('\n');
 
 console.log('HASIL WRITE!')
 septemberDiary.write(20, 'ngerjain live coding');
 console.log(septemberDiary);
+console.log('\n');
+
+console.log('')

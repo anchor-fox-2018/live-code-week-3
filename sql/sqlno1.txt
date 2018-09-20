@@ -1,0 +1,17 @@
+// Nomer 1
+customers SET age = date('now')- birthdate WHERE id < 7
+
+SELECT id, name, age FROM customers
+
+SELECT customers.name, transactions.subtotal, products.name
+FROM 	customers
+INNER JOIN
+	transactions ON transactions.customer_id = customers.id
+INNER JOIN 
+	products ON products.id = transactions.product_id
+
+CREATE TABLE IF NOT EXISTS total_price(
+	customer_id INTEGER,
+	total INTEGER,
+	FOREIGN KEY (customer_id) REFERENCES customers(id)
+	)
